@@ -7,3 +7,18 @@
 .hide {
     display: none;
 }
+body {
+    background: url('img/grooming-lp-by-appointment-bath-and-haircut-img-1000x667.avif') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #333;
+}

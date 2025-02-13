@@ -30,20 +30,20 @@ function Pet(name,age,gender,breed,service,type){
 }
 
 function register(){
-// get the values from inputs
-
-// create obj using constructor
-let newPet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value, inputType.value);
-
-console.log(newPet);
-//push the obj into the arry
-if(isValid(newPet)){
-    petList.push(newPet);
-    displayTable();
-    clearInputs();
-    displayPetsInfo();
-}
-
+    // get the values from inputs
+    // create obj using constructor
+    let newPet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value, inputType.value);
+    console.log(newPet);
+    //push the obj into the arry
+    if(isValid(newPet)){
+        petList.push(newPet);
+        displayTable();
+        displayPetsInfo();
+        clearInputs();
+        showAlert("A new pet was added","success");
+    }else{
+        showAlert("Please, add all the information","danger");
+    }   
 }
 
 //Validations
@@ -72,6 +72,8 @@ function isValid(pet){
 
     return validation;
 }
+
+
 function clearInputs(){
     inputName.value="";
     inputAge.value="";
@@ -97,9 +99,14 @@ function showAlert(msg,type){
     let alertContainer = document.getElementById("alertContainer");
 
     alertContainer.innerHTML=`
-        <div class="alert-error class=" alert alert-${type}" role="alert">
-         ${msg}
-        </div>`
+       <div id="alert-error" class="alert alert-${type}" role="alert">
+            ${msg}
+        </div>
+    `;
+
+    setTimeout(()=>{
+        document.getElementById("alert-error").remove();
+    },3000);// 1000 = 1s
 }
 
 function init(){

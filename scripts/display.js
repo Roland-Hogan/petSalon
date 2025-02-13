@@ -12,6 +12,8 @@ function displayPet(){
                     <h6 class="card-subtitle mb-2 text-body-secondary">Age: ${pet.age}</h6>
                     <p class="card-text">Gender: ${pet.gender}</p>
                     <p class="card-text">Breed: ${pet.breed}</p>
+                    <p class="card-text">Breed: ${pet.service}</p>
+                    <p class="card-text">Breed: ${pet.type}</p>
                 </div>
             </div>
         `
@@ -20,7 +22,7 @@ function displayPet(){
     cardSection.innerHTML = result;
 }
 function displayPetsInfo(){
-    document.getElementById("petsCounter").innerHTML= " Total pets =" +  petList.length;
+    document.getElementById("petsCounter").innerHTML= "Total pets =" +  petList.length;
 }
 function displayTable(){
     let petRows = document.getElementById("petRows");
