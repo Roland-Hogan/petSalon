@@ -54,7 +54,7 @@ function clickMe(){
     }
 
 
-    $("btnNew").on("lclick",clickMe);
+    $("btnNew").on("click",clickMe);
 
 
 
