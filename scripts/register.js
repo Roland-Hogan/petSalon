@@ -108,7 +108,15 @@ function showAlert(msg,type){
         document.getElementById("alert-error").remove();
     },3000);// 1000 = 1s
 }
-
+function  getServices(){
+    let list = read();
+    let option="";
+    for(let i=0;i<list.length;i++){
+        let service=list[i];
+        option += `<option value="${service.title}">${service.title} - ${service.price}</option>`
+    }
+    inputService.innerHTML=option;
+}
 function init(){
 
     //create three pets
@@ -121,6 +129,7 @@ function init(){
     petList.push(pet1,pet2,pet3);
     displayTable();
     displayPetsInfo();
+    getServices();
 
     document.getElementById("alert-error").classList.add("hide");
 }
